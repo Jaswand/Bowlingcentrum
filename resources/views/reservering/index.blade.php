@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Overzicht Reservation</h1>
+    <h1>Reservation Overview</h1>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -12,10 +12,11 @@
                 <th>Volwassen</th>
                 <th>Kinderen</th>
                 <th>optiepakket</th>
+                <th>wijzigen</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($reserveringen as $reservering)
+            @foreach ($reserverings as $reservering)
                 <tr>
                     <td>{{ $reservering->voornaam }}</td>
                     <td>{{ $reservering->tussenvoegsel }}</td>
@@ -24,5 +25,15 @@
                     <td>{{ $reservering->volwassen }}</td>
                     <td>{{ $reservering->kinderen }}</td>
                     <td>{{ $reservering->optiepakket }}</td>
+                    
+                        
+
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">delete</button>
+                        </form>
+                    </td>
                 </tr>
-    </table>
+            @endforeach
+        </tbody>
+@endsection

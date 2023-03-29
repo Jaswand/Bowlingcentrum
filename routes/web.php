@@ -23,3 +23,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/reserveren', [App\Http\Controllers\ReserveringController::class, 'index'])->name('reserveren');
+Route::get('/reserveren/edit', [App\Http\Controllers\ReserveringController::class, 'edit'])->name('reserveren.edit');
